@@ -1,0 +1,6 @@
+lösenord.txt
+jobb.json
+borttagna.json
+__pycache__/
+.DS_Store
+*.pyc
