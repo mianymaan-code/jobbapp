@@ -433,3 +433,17 @@ if __name__ == "__main__":
 
     main()
 
+Last login: Tue Apr 28 16:14:03 on ttys014
+mianyman1@AirsomtllhorMia ~ % git add requirements.txt
+git commit -m "Lägger till requirements"
+git push
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+mianyman1@AirsomtllhorMia ~ % git add requirements.txt
+git commit -m "Lägger till requirements"
+git push
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+mianyman1@AirsomtllhorMia ~ % 
