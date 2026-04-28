@@ -121,7 +121,7 @@ def visa_tabell(filtrerade_jobb):
         ai_ikon = "🤖" if j.get("ai_analys") else ""
         deadline = j.get("deadline", "")[:10] or "—"
         with st.container():
-            k1, k2, k3, k4, k5, k6 = st.columns([0.5, 3.5, 2.5, 1.5, 1.5, 1])
+            k1, k2, k3, k4, k5, k6, k7 = st.columns([0.5, 3, 2, 1.5, 1.5, 1, 0.5])
             k1.write(prio_ikon)
             if k2.button(f"{j['titel'][:45]}", key=f"jobb_{i}", use_container_width=True):
                 st.session_state.valt_index = st.session_state.jobb.index(j)
@@ -130,6 +130,13 @@ def visa_tabell(filtrerade_jobb):
             k4.write((j.get("plats") or "")[:14])
             k5.write(deadline)
             k6.write(f"{j['status'][:10]} {ai_ikon}")
+            if k7.button("🗑️", key=f"ta_bort_{i}"):
+                borttagna = ladda_borttagna()
+                borttagna.add(j["id"])
+                spara_borttagna(borttagna)
+                st.session_state.jobb.remove(j)
+                spara_jobb(st.session_state.jobb)
+                st.rerun()
 
 def visa_detaljer():
     idx = st.session_state.valt_index
