@@ -425,7 +425,9 @@ def main():
     col_header[4].caption("Deadline")
     col_header[5].caption("Status")
     visa_tabell(filtrerade)
-    visa_detaljer()
+    visa_detaljer()if __name__ == "__main__":
+    main()
+
 
 
 
