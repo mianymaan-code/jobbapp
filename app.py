@@ -130,7 +130,7 @@ def visa_tabell(filtrerade_jobb):
             k4.write((j.get("plats") or "")[:14])
             k5.write(deadline)
             k6.write(f"{j['status'][:10]} {ai_ikon}")
-            if k7.button("🗑️", key=f"ta_bort_{i}"):
+            if k7.button("🗑️", key=f"ta_bort_{j['id']}"):
                 borttagna = ladda_borttagna()
                 borttagna.add(j["id"])
                 spara_borttagna(borttagna)
