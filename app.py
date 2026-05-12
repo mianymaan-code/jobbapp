@@ -199,10 +199,14 @@ def visa_detaljer():
                 st.success("Uppdaterat!")
                 st.rerun()
     st.divider()
-    col1, col2 = st.columns([1, 1])
-    if col1.button("🤖 Kör AI-analys", use_container_width=True):
+    col1, col2, col3 = st.columns([1, 1, 1])
+    if col1.button("🤖 Analysera från länk", use_container_width=True):
         with st.spinner("Analyserar med Claude AI..."):
             resultat = analysera_jobb(j)
+    if col2.button("📝 Analysera från anteckningar", use_container_width=True):
+        with st.spinner("Analyserar från anteckningar..."):
+            from ai_analys import analysera_jobb_från_anteckningar
+            resultat = analysera_jobb_från_anteckningar(j)
             if "fel" in resultat:
                 st.error(resultat["fel"])
             else:
