@@ -309,13 +309,13 @@ def hantera_lagg_till():
         return
     with st.expander("➕ Lägg till eget jobb", expanded=True):
         col1, col2 = st.columns(2)
-        titel = col1.text_input("Jobbtitel *")
-        foretag = col2.text_input("Företag *")
+        titel = col1.text_input("Jobbtitel *", key="lagg_till_titel")
+        foretag = col2.text_input("Företag *", key="lagg_till_foretag")
         col1, col2 = st.columns(2)
-        plats = col1.text_input("Plats")
-        deadline = col2.text_input("Sista ansökningsdag (ÅÅÅÅ-MM-DD)")
-        url = st.text_input("URL till annonsen")
-        ansokningslank = st.text_input("Länk till ansökan (lämna tom om samma som ovan)")
+        plats = col1.text_input("Plats", key="lagg_till_plats")
+        deadline = col2.text_input("Sista ansökningsdag (ÅÅÅÅ-MM-DD)", key="lagg_till_deadline")
+        url = st.text_input("URL till annonsen", key="lagg_till_url")
+        ansokningslank = st.text_input("Länk till ansökan (lämna tom om samma som ovan)", key="lagg_till_ansokningslank")
         prioritet = st.selectbox("Prioritet", ["", "Hög", "Medium"])
         if st.button("Spara jobb") and titel and foretag:
             import uuid

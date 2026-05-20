@@ -68,7 +68,7 @@ Skriv ett utkast till personligt brev (ca 250-300 ord) som:
         client = anthropic.Anthropic(api_key=api_key)
         message = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=1500,
+            max_tokens=3000,
             messages=[{"role": "user", "content": prompt}]
         )
         return {"analys": message.content[0].text}
@@ -236,7 +236,7 @@ Skriv ett utkast till personligt brev (ca 250-300 ord) som:
         client = anthropic.Anthropic(api_key=api_key)
         message = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=1500,
+            max_tokens=3000,
             messages=[{"role": "user", "content": prompt}]
         )
         return {"analys": message.content[0].text}
